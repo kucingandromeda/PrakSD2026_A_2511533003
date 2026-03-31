@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/arax/Documents/kuliah/semester_2/strukdat/pratikum/code/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+896786504.index
+3429838370.index
