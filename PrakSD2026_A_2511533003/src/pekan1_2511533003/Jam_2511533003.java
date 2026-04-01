@@ -1,7 +1,5 @@
 package pekan1_2511533003;
 
-import java.util.Scanner;
-
 public class Jam_2511533003 {
 
     private int hh; // 0..23
