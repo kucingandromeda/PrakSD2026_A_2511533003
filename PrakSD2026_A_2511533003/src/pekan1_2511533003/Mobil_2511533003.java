@@ -89,9 +89,9 @@ class Mobil_2511533003 {
 //     }
 
 //     // selector
-//     public Unit selectMobil(int index) {
-//         return this.mobil.get(index);
-//     }
+// public Unit selectMobil(int index) {
+//     return this.mobil.get(index);
+// }
 
 //     // mutator
 //     public void setNamaMobil(int index, String nama) {
