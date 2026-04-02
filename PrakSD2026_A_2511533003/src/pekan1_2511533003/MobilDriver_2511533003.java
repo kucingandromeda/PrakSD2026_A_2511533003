@@ -1,19 +1,26 @@
 package pekan1_2511533003;
 
 public class MobilDriver_2511533003 {
+    static int idx  = 0; 
+    static int max  = 5; 
 
     public static void tambahMobil(Mobil_2511533003[] mobil_list, Mobil_2511533003 mobil) {
-        int index = mobil_list.length;
-        mobil_list[index] = mobil;
+        if (idx >= max){
+            System.out.println("kapasitas penuh");
+        } else {
+            mobil_list[idx] = mobil;
+            idx += 1;
+        }
     }
 
     public static void hapusMobil(Mobil_2511533003[] mobil_list) {
-        int index = mobil_list.length - 1;
-        if (index < 0){
-            System.out.println("list mobil kosong");
+        if (idx < 0){
+            System.out.println("kosong");
         } else {
-            mobil_list[index] = null;
+            idx -= 1;
+            mobil_list[idx] = null;
         }
+        
     }
 
     // selector
