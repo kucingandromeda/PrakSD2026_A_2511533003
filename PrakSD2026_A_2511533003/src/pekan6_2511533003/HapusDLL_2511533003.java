@@ -73,7 +73,7 @@ public class HapusDLL_2511533003 {
         return head_3003;
     }
 
-    public static void printList(NodeDLL_2511533003 head_3003) {
+    public static void printList_3003(NodeDLL_2511533003 head_3003) {
         NodeDLL_2511533003 curr_3003 = head_3003;
         while (curr_3003 != null) {
             System.out.print(curr_3003.data_3003 + " <-> ");
@@ -97,18 +97,18 @@ public class HapusDLL_2511533003 {
             head_3003.next_3003.next_3003.next_3003;
 
         System.out.print("DLL Awal: ");
-        printList(head_3003);
+        printList_3003(head_3003);
 
         System.out.print("Setelah Head Dihapus");
         head_3003 = delHead_3003(head_3003);
-        printList(head_3003);
+        printList_3003(head_3003);
 
         System.out.print("Setelah node terakhir dihapus");
         head_3003 = delLast_3003(head_3003);
-        printList(head_3003);
+        printList_3003(head_3003);
 
         System.out.print("Menghapus Node Kedua");
         head_3003 = delPos_3003(head_3003, 2);
-        printList(head_3003);
+        printList_3003(head_3003);
     }
 }
