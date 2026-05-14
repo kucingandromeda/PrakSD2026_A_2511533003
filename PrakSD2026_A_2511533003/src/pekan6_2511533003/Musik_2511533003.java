@@ -10,12 +10,14 @@ public class Musik_2511533003 {
     ) {
         Scanner sc_3003 = new Scanner(System.in);
 
+        // input
         System.out.print("judul: ");
         String judul_3003 = sc_3003.nextLine();
 
         System.out.print("Penyanyi: ");
         String penyanyi_3003 = sc_3003.nextLine();
 
+        // Node
         Lagu_2511533003 lagu_3003 = new Lagu_2511533003(
             judul_3003,
             penyanyi_3003
@@ -30,6 +32,7 @@ public class Musik_2511533003 {
             System.out.println("Linked List Kosong!");
         }
 
+        // menampilkan secara iterative node per node dari head
         while (true) {
             if (curr_3003 == null) {
                 break;
@@ -63,6 +66,7 @@ public class Musik_2511533003 {
             System.out.println("Linked List Kosong!");
         }
 
+        // menampilkan secara iterative node per node dari tail
         while (true) {
             if (curr_3003 == null) {
                 break;
@@ -83,13 +87,15 @@ public class Musik_2511533003 {
         Lagu_2511533003 curr_3003 = head_3003;
         if (curr_3003 == null) {
             System.out.println("Linked List Kosong!");
+            return;
         }
 
         Scanner sc_3003 = new Scanner(System.in);
-
         System.out.print("masukkan judul yang ingin dicari: ");
+        // input
         String cariJudul_3003 = sc_3003.nextLine();
 
+        // pencarian dimulai dari head
         while (true) {
             if (curr_3003 == null) {
                 System.out.println(
@@ -132,7 +138,6 @@ public class Musik_2511533003 {
                     tail_3003
                 );
                 if (head_3003 == null && tail_3003 == null) {
-                    System.out.println("this run");
                     head_3003 = lagu_3003;
                     tail_3003 = lagu_3003;
                 } else {
@@ -144,6 +149,11 @@ public class Musik_2511533003 {
                 System.out.println("berhasil ditambahkan! ");
             } else if (option_3003 == 2) {
                 head_3003 = hapusLaguAwal_3003(head_3003);
+                if (head_3003 == null) {
+                    head_3003 = null;
+                    tail_3003 = null;
+                    continue;
+                }
                 head_3003.prev_3003 = null;
                 System.out.println("berhasil di hapus");
             } else if (option_3003 == 3) {
