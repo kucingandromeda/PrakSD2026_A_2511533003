@@ -16,7 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
+import javax.swing.SwingUtilities;
 
 public class insertionSortGUI_2511533003 extends JFrame {
 
@@ -34,7 +34,7 @@ public class insertionSortGUI_2511533003 extends JFrame {
     private boolean sorting_3003 = false;
     private int stepCount_3003 = 1;
 
-    private JPanel contentPane;
+    private JPanel contentPane_3003;
 
     /**
      * Launch the application.
@@ -80,11 +80,6 @@ public class insertionSortGUI_2511533003 extends JFrame {
         setButton_3003.addActionListener(e -> setArrayFromInput_3003());
         stepButton_3003.addActionListener(e -> performStep_3003());
         resetButton_3003.addActionListener(e -> reset_3003());
-
-        // setBounds(100, 100, 450, 300);
-        // contentPane = new JPanel();
-        // contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        // setContentPane(contentPane);
     }
 
     private void setArrayFromInput_3003() {
@@ -202,14 +197,10 @@ public class insertionSortGUI_2511533003 extends JFrame {
     }
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(() -> {
-            try {
-                insertionSortGUI_2511533003 frame =
-                    new insertionSortGUI_2511533003();
-                frame.setVisible(true);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        SwingUtilities.invokeLater(() -> {
+            insertionSortGUI_2511533003 gui_3003 =
+                new insertionSortGUI_2511533003();
+            gui_3003.setVisible(true);
         });
     }
 }
