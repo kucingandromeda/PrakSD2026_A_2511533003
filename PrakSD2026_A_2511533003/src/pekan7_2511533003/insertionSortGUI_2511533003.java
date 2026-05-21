@@ -3,7 +3,6 @@ package pekan7_2511533003;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.BorderFactory;
@@ -36,13 +35,6 @@ public class insertionSortGUI_2511533003 extends JFrame {
 
     private JPanel contentPane_3003;
 
-    /**
-     * Launch the application.
-     */
-
-    /**
-     * Create the frame.
-     */
     public insertionSortGUI_2511533003() {
         setTitle("Insertion Sort Langkah per langkah");
         setSize(750, 400);

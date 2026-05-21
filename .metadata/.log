@@ -939,3 +939,329 @@ Chain 2:
 
 !ENTRY ch.qos.logback.classic 1 0 2026-05-19 13:16:15.975
 !MESSAGE Logback config file: /home/arax/Documents/kuliah/semester_2/strukdat/pratikum/code/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.100.20250418-1315.xml
+!SESSION 2026-05-21 17:29:41.846 -----------------------------------------------
+eclipse.buildId=4.36.0.20250605-1300
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.eclemma.core 4 0 2026-05-21 17:29:43.387
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [150]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.13,0.8.14)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.13.202504020838"
+       org.jacoco.report [484]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.objectweb.asm"
+              org.jacoco.core [483]
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.13,0.8.14)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.13.202504020838"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.8.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:495)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2110)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:146)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2101)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2041)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:2003)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1915)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2026-05-21 17:29:43.396
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [152]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.10.202505212130"; singleton:="true"
+       org.eclipse.eclemma.core [150]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.13,0.8.14)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.13.202504020838"
+              org.jacoco.report [484]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                     org.jacoco.core [483]
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.13,0.8.14)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.13.202504020838"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.13,0.8.14)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.13.202504020838"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.8.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:495)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2110)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:146)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2101)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2041)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:2003)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1915)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY ch.qos.logback.classic 1 0 2026-05-21 17:29:43.504
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-05-21 17:29:46.164
+!MESSAGE Logback config file: /home/arax/Documents/kuliah/semester_2/strukdat/pratikum/code/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.100.20250418-1315.xml
+
+!ENTRY org.eclipse.wb.core 4 4 2026-05-21 18:21:28.982
+!MESSAGE Designer [1.21.0.202508081944.202605211821]: Cannot invoke "java.awt.GraphicsConfiguration.getDefaultTransform()" because the return value of "java.awt.Component.getGraphicsConfiguration()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.GraphicsConfiguration.getDefaultTransform()" because the return value of "java.awt.Component.getGraphicsConfiguration()" is null
+	at org.eclipse.wb.internal.swing.utils.SwingImageUtils.getDisplayZoom(SwingImageUtils.java:553)
+	at org.eclipse.wb.internal.swing.utils.SwingImageUtils.createComponentShot(SwingImageUtils.java:79)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas$2.run(FontPreviewCanvas.java:97)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runLog(ExecutionUtils.java:105)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas.onPaint(FontPreviewCanvas.java:76)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas$1.handleEvent(FontPreviewCanvas.java:54)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1682)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1665)
+	at org.eclipse.swt.widgets.Control.gtk_draw(Control.java:3891)
+	at org.eclipse.swt.widgets.Scrollable.gtk_draw(Scrollable.java:394)
+	at org.eclipse.swt.widgets.Composite.gtk_draw(Composite.java:506)
+	at org.eclipse.swt.widgets.Canvas.gtk_draw(Canvas.java:173)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2614)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:6857)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:6169)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1605)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_iteration_do(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4519)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPropertyEditor.openDialog(FontPropertyEditor.java:114)
+	at org.eclipse.wb.internal.core.model.property.editor.TextDialogPropertyEditor$1.onClick(TextDialogPropertyEditor.java:37)
+	at org.eclipse.wb.internal.core.model.property.editor.presentation.ButtonPropertyEditorPresentation.lambda$2(ButtonPropertyEditorPresentation.java:58)
+	at org.eclipse.draw2d.ButtonModel.lambda$0(ButtonModel.java:137)
+	at java.base/java.util.concurrent.CopyOnWriteArrayList.forEach(CopyOnWriteArrayList.java:891)
+	at org.eclipse.draw2d.ButtonModel.fireActionPerformed(ButtonModel.java:137)
+	at org.eclipse.draw2d.ButtonModel$DefaultFiringBehavior.released(ButtonModel.java:488)
+	at java.base/java.util.concurrent.CopyOnWriteArrayList.forEach(CopyOnWriteArrayList.java:891)
+	at org.eclipse.draw2d.ButtonModel.fireReleased(ButtonModel.java:170)
+	at org.eclipse.draw2d.ButtonModel.setPressed(ButtonModel.java:446)
+	at org.eclipse.draw2d.ClickableEventHandler.mouseReleased(ClickableEventHandler.java:108)
+	at org.eclipse.draw2d.Figure.handleMouseReleased(Figure.java:1053)
+	at org.eclipse.draw2d.SWTEventDispatcher.dispatchMouseReleased(SWTEventDispatcher.java:295)
+	at org.eclipse.gef.ui.parts.DomainEventDispatcher.dispatchMouseReleased(DomainEventDispatcher.java:426)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseUp(LightweightSystem.java:598)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:258)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-05-21 18:21:29.159
+!MESSAGE Designer [1.21.0.202508081944.202605211821]: Cannot invoke "java.awt.GraphicsConfiguration.getDefaultTransform()" because the return value of "java.awt.Component.getGraphicsConfiguration()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.GraphicsConfiguration.getDefaultTransform()" because the return value of "java.awt.Component.getGraphicsConfiguration()" is null
+	at org.eclipse.wb.internal.swing.utils.SwingImageUtils.getDisplayZoom(SwingImageUtils.java:553)
+	at org.eclipse.wb.internal.swing.utils.SwingImageUtils.createComponentShot(SwingImageUtils.java:79)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas$2.run(FontPreviewCanvas.java:97)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runLog(ExecutionUtils.java:105)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas.onPaint(FontPreviewCanvas.java:76)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas$1.handleEvent(FontPreviewCanvas.java:54)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1682)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1665)
+	at org.eclipse.swt.widgets.Control.gtk_draw(Control.java:3891)
+	at org.eclipse.swt.widgets.Scrollable.gtk_draw(Scrollable.java:394)
+	at org.eclipse.swt.widgets.Composite.gtk_draw(Composite.java:506)
+	at org.eclipse.swt.widgets.Canvas.gtk_draw(Canvas.java:173)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2614)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:6857)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:6169)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1605)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_iteration_do(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4519)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPropertyEditor.openDialog(FontPropertyEditor.java:114)
+	at org.eclipse.wb.internal.core.model.property.editor.TextDialogPropertyEditor$1.onClick(TextDialogPropertyEditor.java:37)
+	at org.eclipse.wb.internal.core.model.property.editor.presentation.ButtonPropertyEditorPresentation.lambda$2(ButtonPropertyEditorPresentation.java:58)
+	at org.eclipse.draw2d.ButtonModel.lambda$0(ButtonModel.java:137)
+	at java.base/java.util.concurrent.CopyOnWriteArrayList.forEach(CopyOnWriteArrayList.java:891)
+	at org.eclipse.draw2d.ButtonModel.fireActionPerformed(ButtonModel.java:137)
+	at org.eclipse.draw2d.ButtonModel$DefaultFiringBehavior.released(ButtonModel.java:488)
+	at java.base/java.util.concurrent.CopyOnWriteArrayList.forEach(CopyOnWriteArrayList.java:891)
+	at org.eclipse.draw2d.ButtonModel.fireReleased(ButtonModel.java:170)
+	at org.eclipse.draw2d.ButtonModel.setPressed(ButtonModel.java:446)
+	at org.eclipse.draw2d.ClickableEventHandler.mouseReleased(ClickableEventHandler.java:108)
+	at org.eclipse.draw2d.Figure.handleMouseReleased(Figure.java:1053)
+	at org.eclipse.draw2d.SWTEventDispatcher.dispatchMouseReleased(SWTEventDispatcher.java:295)
+	at org.eclipse.gef.ui.parts.DomainEventDispatcher.dispatchMouseReleased(DomainEventDispatcher.java:426)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseUp(LightweightSystem.java:598)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:258)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-05-21 18:21:34.906
+!MESSAGE Designer [1.21.0.202508081944.202605211821]: Cannot invoke "java.awt.GraphicsConfiguration.getDefaultTransform()" because the return value of "java.awt.Component.getGraphicsConfiguration()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.GraphicsConfiguration.getDefaultTransform()" because the return value of "java.awt.Component.getGraphicsConfiguration()" is null
+	at org.eclipse.wb.internal.swing.utils.SwingImageUtils.getDisplayZoom(SwingImageUtils.java:553)
+	at org.eclipse.wb.internal.swing.utils.SwingImageUtils.createComponentShot(SwingImageUtils.java:79)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas$2.run(FontPreviewCanvas.java:97)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runLog(ExecutionUtils.java:105)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas.onPaint(FontPreviewCanvas.java:76)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPreviewCanvas$1.handleEvent(FontPreviewCanvas.java:54)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1682)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1665)
+	at org.eclipse.swt.widgets.Control.gtk_draw(Control.java:3891)
+	at org.eclipse.swt.widgets.Scrollable.gtk_draw(Scrollable.java:394)
+	at org.eclipse.swt.widgets.Composite.gtk_draw(Composite.java:506)
+	at org.eclipse.swt.widgets.Canvas.gtk_draw(Canvas.java:173)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2614)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:6857)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:6169)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1605)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_iteration_do(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4519)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.wb.internal.swing.model.property.editor.font.FontPropertyEditor.openDialog(FontPropertyEditor.java:114)
+	at org.eclipse.wb.internal.core.model.property.editor.TextDialogPropertyEditor$1.onClick(TextDialogPropertyEditor.java:37)
+	at org.eclipse.wb.internal.core.model.property.editor.presentation.ButtonPropertyEditorPresentation.lambda$2(ButtonPropertyEditorPresentation.java:58)
+	at org.eclipse.draw2d.ButtonModel.lambda$0(ButtonModel.java:137)
+	at java.base/java.util.concurrent.CopyOnWriteArrayList.forEach(CopyOnWriteArrayList.java:891)
+	at org.eclipse.draw2d.ButtonModel.fireActionPerformed(ButtonModel.java:137)
+	at org.eclipse.draw2d.ButtonModel$DefaultFiringBehavior.released(ButtonModel.java:488)
+	at java.base/java.util.concurrent.CopyOnWriteArrayList.forEach(CopyOnWriteArrayList.java:891)
+	at org.eclipse.draw2d.ButtonModel.fireReleased(ButtonModel.java:170)
+	at org.eclipse.draw2d.ButtonModel.setPressed(ButtonModel.java:446)
+	at org.eclipse.draw2d.ClickableEventHandler.mouseReleased(ClickableEventHandler.java:108)
+	at org.eclipse.draw2d.Figure.handleMouseReleased(Figure.java:1053)
+	at org.eclipse.draw2d.SWTEventDispatcher.dispatchMouseReleased(SWTEventDispatcher.java:295)
+	at org.eclipse.gef.ui.parts.DomainEventDispatcher.dispatchMouseReleased(DomainEventDispatcher.java:426)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseUp(LightweightSystem.java:598)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:258)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)

@@ -1,6 +1,6 @@
 package pekan7_2511533003;
 
-public class BubleSort_2511533003 {
+public class BubbleSort_2511533003 {
 
     public static void bubleSort_3003(int[] arr_3003) {
         int n_3003 = arr_3003.length;
