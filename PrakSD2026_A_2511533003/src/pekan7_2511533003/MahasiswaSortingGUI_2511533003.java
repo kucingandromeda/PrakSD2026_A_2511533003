@@ -21,12 +21,12 @@ import javax.swing.border.EmptyBorder;
 
 public class MahasiswaSortingGUI_2511533003 extends JFrame {
 
-    private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
+    private static final long serialVersionUID_3003 = 1L;
+    private JPanel contentPane_3003;
     private JTextField textFieldNama_3003;
     private JTextField textFieldNim_3003;
     private JTextField textFieldProdi_3003;
-    private JLabel lblProgramStudi;
+    private JLabel lblProgramStudi_3003;
 
     JTextArea textAreaMahasiswa_3003;
 
@@ -42,11 +42,11 @@ public class MahasiswaSortingGUI_2511533003 extends JFrame {
             new Runnable() {
                 public void run() {
                     try {
-                        MahasiswaSortingGUI_2511533003 frame =
+                        MahasiswaSortingGUI_2511533003 frame_3003 =
                             new MahasiswaSortingGUI_2511533003();
-                        frame.setVisible(true);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                        frame_3003.setVisible(true);
+                    } catch (Exception e_3003) {
+                        e_3003.printStackTrace();
                     }
                 }
             }
@@ -85,7 +85,7 @@ public class MahasiswaSortingGUI_2511533003 extends JFrame {
     }
 
     // Sorting
-    private JButton btnStep;
+    private JButton btnStep_3003;
     private JTextArea areaStep_3003;
     private ArrayList<String> history_3003 = new ArrayList<String>();
     private boolean sortingStatus_3003 = false;
@@ -95,15 +95,15 @@ public class MahasiswaSortingGUI_2511533003 extends JFrame {
     public void bubbleSort_3003() {
         if (!sortingStatus_3003) return;
 
-        int n = mahasiswa_list_3003.size();
+        int n_3003 = mahasiswa_list_3003.size();
 
-        if (bubbleI_3003 >= n) {
+        if (bubbleI_3003 >= n_3003) {
             sortingStatus_3003 = false;
             JOptionPane.showMessageDialog(this, "bubble Sort Selesai");
             return;
         }
 
-        for (int j_3003 = 0; j_3003 < n - bubbleI_3003 - 1; j_3003++) {
+        for (int j_3003 = 0; j_3003 < n_3003 - bubbleI_3003 - 1; j_3003++) {
             Mahasiswa_2511533003 left_mahasiswa_3003 = mahasiswa_list_3003.get(
                 j_3003
             );
@@ -211,12 +211,12 @@ public class MahasiswaSortingGUI_2511533003 extends JFrame {
 
     int insertionI_3003 = 1;
 
-    public void insertionSort() {
+    public void insertionSort_3003() {
         if (!sortingStatus_3003) return;
 
-        int n = mahasiswa_list_3003.size();
+        int n_3003 = mahasiswa_list_3003.size();
 
-        if (insertionI_3003 >= n) {
+        if (insertionI_3003 >= n_3003) {
             sortingStatus_3003 = false;
             JOptionPane.showMessageDialog(this, "Insertion Sort Selesai");
             return;
@@ -260,47 +260,49 @@ public class MahasiswaSortingGUI_2511533003 extends JFrame {
     public MahasiswaSortingGUI_2511533003() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 580, 537);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
-        contentPane.setLayout(null);
+        contentPane_3003 = new JPanel();
+        contentPane_3003.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane_3003);
+        contentPane_3003.setLayout(null);
 
         textFieldNama_3003 = new JTextField();
         textFieldNama_3003.setBounds(12, 27, 174, 21);
-        contentPane.add(textFieldNama_3003);
+        contentPane_3003.add(textFieldNama_3003);
         textFieldNama_3003.setColumns(10);
 
-        JLabel lblNamaSiswa = new JLabel("Nama Mahasiswa");
-        lblNamaSiswa.setBounds(12, 12, 114, 17);
-        contentPane.add(lblNamaSiswa);
+        JLabel lblNamaSiswa_3003 = new JLabel("Nama Mahasiswa");
+        lblNamaSiswa_3003.setBounds(12, 12, 114, 17);
+        contentPane_3003.add(lblNamaSiswa_3003);
 
         textFieldNim_3003 = new JTextField();
         textFieldNim_3003.setColumns(10);
         textFieldNim_3003.setBounds(198, 27, 192, 21);
-        contentPane.add(textFieldNim_3003);
+        contentPane_3003.add(textFieldNim_3003);
 
-        JLabel lblNimMahasiswa = new JLabel("Nim Mahasiswa");
-        lblNimMahasiswa.setBounds(198, 12, 114, 17);
-        contentPane.add(lblNimMahasiswa);
+        JLabel lblNimMahasiswa_3003 = new JLabel("Nim Mahasiswa");
+        lblNimMahasiswa_3003.setBounds(198, 12, 114, 17);
+        contentPane_3003.add(lblNimMahasiswa_3003);
 
         textFieldProdi_3003 = new JTextField();
         textFieldProdi_3003.setColumns(10);
         textFieldProdi_3003.setBounds(402, 27, 166, 21);
-        contentPane.add(textFieldProdi_3003);
+        contentPane_3003.add(textFieldProdi_3003);
 
-        lblProgramStudi = new JLabel("Program studi");
-        lblProgramStudi.setBounds(402, 12, 114, 17);
-        contentPane.add(lblProgramStudi);
+        lblProgramStudi_3003 = new JLabel("Program studi");
+        lblProgramStudi_3003.setBounds(402, 12, 114, 17);
+        contentPane_3003.add(lblProgramStudi_3003);
 
-        JButton btnTambahkan = new JButton("Tambahkan");
-        btnTambahkan.setBounds(12, 60, 127, 27);
-        contentPane.add(btnTambahkan);
-        btnTambahkan.addActionListener(e_3003 -> tambahkanMahasiswa_3003());
+        JButton btnTambahkan_3003 = new JButton("Tambahkan");
+        btnTambahkan_3003.setBounds(12, 60, 127, 27);
+        contentPane_3003.add(btnTambahkan_3003);
+        btnTambahkan_3003.addActionListener(e_3003 ->
+            tambahkanMahasiswa_3003()
+        );
 
-        JButton btnMulai = new JButton("Mulai");
-        btnMulai.setBounds(12, 99, 127, 27);
-        contentPane.add(btnMulai);
-        btnMulai.addActionListener(e -> {
+        JButton btnMulai_3003 = new JButton("Mulai");
+        btnMulai_3003.setBounds(12, 99, 127, 27);
+        contentPane_3003.add(btnMulai_3003);
+        btnMulai_3003.addActionListener(e -> {
             if (sortingStatus_3003) return;
 
             history_3003 = new ArrayList<String>();
@@ -315,34 +317,34 @@ public class MahasiswaSortingGUI_2511533003 extends JFrame {
             areaStep_3003.setText(display_3003);
         });
 
-        JComboBox comboBox = new JComboBox();
-        comboBox.setModel(
+        JComboBox comboBox_3003 = new JComboBox();
+        comboBox_3003.setModel(
             new DefaultComboBoxModel(new String[] {
                 "Insertion Sort",
                 "SelectionSort",
                 "Bubble Sort",
             })
         );
-        comboBox.setBounds(290, 60, 114, 26);
-        contentPane.add(comboBox);
+        comboBox_3003.setBounds(290, 60, 114, 26);
+        contentPane_3003.add(comboBox_3003);
 
-        JButton btnHapus = new JButton("Hapus");
-        btnHapus.setBounds(151, 60, 127, 27);
-        contentPane.add(btnHapus);
-        btnHapus.addActionListener(e_3003 -> HapusMahasiswa_3003());
+        JButton btnHapus_3003 = new JButton("Hapus");
+        btnHapus_3003.setBounds(151, 60, 127, 27);
+        contentPane_3003.add(btnHapus_3003);
+        btnHapus_3003.addActionListener(e_3003 -> HapusMahasiswa_3003());
 
         textAreaMahasiswa_3003 = new JTextArea();
         textAreaMahasiswa_3003.setFont(new Font("Dialog", Font.PLAIN, 16));
         textAreaMahasiswa_3003.setBounds(12, 138, 556, 27);
-        contentPane.add(textAreaMahasiswa_3003);
+        contentPane_3003.add(textAreaMahasiswa_3003);
 
-        btnStep = new JButton("Step");
-        btnStep.setBounds(151, 99, 127, 27);
-        contentPane.add(btnStep);
-        btnStep.addActionListener(e -> {
-            int option_3003 = comboBox.getSelectedIndex();
+        btnStep_3003 = new JButton("Step");
+        btnStep_3003.setBounds(151, 99, 127, 27);
+        contentPane_3003.add(btnStep_3003);
+        btnStep_3003.addActionListener(e -> {
+            int option_3003 = comboBox_3003.getSelectedIndex();
             if (option_3003 == 0) {
-                insertionSort();
+                insertionSort_3003();
             } else if (option_3003 == 1) {
                 selectionSort_3003();
             } else {
@@ -353,6 +355,6 @@ public class MahasiswaSortingGUI_2511533003 extends JFrame {
         areaStep_3003 = new JTextArea();
         areaStep_3003.setFont(new Font("Dialog", Font.PLAIN, 16));
         areaStep_3003.setBounds(12, 177, 556, 305);
-        contentPane.add(areaStep_3003);
+        contentPane_3003.add(areaStep_3003);
     }
 }
