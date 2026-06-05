@@ -63,15 +63,16 @@ public class Sorting_2511533003 {
         }
     }
 
-    static int[] mergeSort_3003(int[] arr_3003) {
+    static Lagu_2511533003[] mergeSort_3003(Lagu_2511533003[] arr_3003) {
         if (arr_3003.length == 1) {
             return arr_3003;
         }
         int half_3003 = arr_3003.length / 2;
 
         // splitting
-        int[] left_split_3003 = new int[half_3003];
-        int[] right_split_3003 = new int[arr_3003.length - half_3003];
+        Lagu_2511533003[] left_split_3003 = new Lagu_2511533003[half_3003];
+        Lagu_2511533003[] right_split_3003 =
+            new Lagu_2511533003[arr_3003.length - half_3003];
         for (int i_3003 = 0; i_3003 < arr_3003.length; i_3003++) {
             if (i_3003 < half_3003) {
                 left_split_3003[i_3003] = arr_3003[i_3003];
@@ -80,16 +81,17 @@ public class Sorting_2511533003 {
             }
         }
 
-        int[] left_arr_3003 = mergeSort_3003(left_split_3003);
+        Lagu_2511533003[] left_arr_3003 = mergeSort_3003(left_split_3003);
         int left_len_3003 = left_arr_3003.length;
         int left_idx_3003 = 0;
 
-        int[] right_arr_3003 = mergeSort_3003(right_split_3003);
+        Lagu_2511533003[] right_arr_3003 = mergeSort_3003(right_split_3003);
         int right_len_3003 = right_arr_3003.length;
         int right_idx_3003 = 0;
 
         int idx_3003 = 0;
-        int[] result_3003 = new int[left_len_3003 + right_len_3003];
+        Lagu_2511533003[] result_3003 = new Lagu_2511533003[left_len_3003 +
+            right_len_3003];
         while (true) {
             if (left_idx_3003 >= left_len_3003) {
                 while (right_idx_3003 < right_len_3003) {
@@ -107,10 +109,16 @@ public class Sorting_2511533003 {
                 break;
             }
 
-            int left_value_3003 = left_arr_3003[left_idx_3003];
-            int right_value_3003 = right_arr_3003[right_idx_3003];
+            Lagu_2511533003 left_value_3003 = left_arr_3003[left_idx_3003];
+            Lagu_2511533003 right_value_3003 = right_arr_3003[right_idx_3003];
 
-            if (left_value_3003 < right_value_3003) {
+            int cmp = left_value_3003.judul_3003
+                .substring(0, 1)
+                .compareToIgnoreCase(
+                    right_value_3003.judul_3003.substring(0, 1)
+                );
+
+            if (cmp <= 0) {
                 result_3003[idx_3003] = left_value_3003;
                 left_idx_3003 += 1;
             } else {
@@ -179,6 +187,19 @@ public class Sorting_2511533003 {
         return len_3003;
     }
 
+    static void tampilData_3003(Lagu_2511533003[] array_lagu_3003) {
+        for (int i_3003 = 0; i_3003 < array_lagu_3003.length; i_3003++) {
+            System.out.println(
+                i_3003 +
+                    ". " +
+                    array_lagu_3003[i_3003].judul_3003 +
+                    " - " +
+                    array_lagu_3003[i_3003].durasi_3003 +
+                    " detik"
+            );
+        }
+    }
+
     static Boolean pilihAlgo_3003(Lagu_2511533003[] array_3003, int len_3003) {
         if (len_3003 == 0) {
             System.out.print("Data Lagu Kosong");
@@ -190,37 +211,25 @@ public class Sorting_2511533003 {
         int algo_3003 = scanner_3003.nextInt();
 
         Lagu_2511533003[] array_lagu_3003 = new Lagu_2511533003[len_3003];
-        System.out.println("Data Sebelum Sorting: ");
         for (int i_3003 = 0; i_3003 < len_3003; i_3003++) {
             array_lagu_3003[i_3003] = array_3003[i_3003];
-            System.out.println(
-                i_3003 +
-                    ". " +
-                    array_3003[i_3003].judul_3003 +
-                    " - " +
-                    array_3003[i_3003].durasi_3003 +
-                    " detik"
-            );
         }
+        System.out.println("\nData Sebelum Sorting: ");
+        tampilData_3003(array_lagu_3003);
 
         if (algo_3003 == 1) {
             shellSort(array_lagu_3003);
         } else if (algo_3003 == 2) {
             quickSort_3003(array_lagu_3003, 0, array_lagu_3003.length - 1);
+        } else if (algo_3003 == 3) {
+            array_lagu_3003 = mergeSort_3003(array_lagu_3003);
         } else {
+            System.out.println("Opsi tidak tersedia");
+            return false;
         }
 
-        System.out.println("Data Setelah Sorting: ");
-        for (int i_3003 = 0; i_3003 < len_3003; i_3003++) {
-            System.out.println(
-                i_3003 +
-                    ". " +
-                    array_lagu_3003[i_3003].judul_3003 +
-                    " - " +
-                    array_lagu_3003[i_3003].durasi_3003 +
-                    " detik"
-            );
-        }
+        System.out.println("\nData Setelah Sorting: ");
+        tampilData_3003(array_lagu_3003);
 
         return true;
     }
