@@ -45,13 +45,6 @@ public class QuickSort_2511533003 {
         return i_3003 + 1;
     }
 
-    public static void printArr_3003(int[] arr_3003) {
-        for (int i_3003 : arr_3003) {
-            System.out.print(i_3003 + " ");
-        }
-        System.out.println();
-    }
-
     public static void quickSort_3003(
         int[] arr_3003,
         int low_3003,
@@ -62,6 +55,13 @@ public class QuickSort_2511533003 {
             quickSort_3003(arr_3003, low_3003, pi_3003 - 1);
             quickSort_3003(arr_3003, pi_3003 + 1, high_3003);
         }
+    }
+
+    public static void printArr_3003(int[] arr_3003) {
+        for (int i_3003 : arr_3003) {
+            System.out.print(i_3003 + " ");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
