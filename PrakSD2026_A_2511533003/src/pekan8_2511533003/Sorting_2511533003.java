@@ -240,7 +240,7 @@ public class Sorting_2511533003 {
         Scanner scanner_3003 = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n=== Sorting Playlist NIM: 2411532014 ===");
+            System.out.println("\n=== Sorting Playlist NIM: 2511533003 ===");
             System.out.println("1. Masukkan Data");
             System.out.println("2. Mulai Sorting");
             System.out.println("3. Exit");
