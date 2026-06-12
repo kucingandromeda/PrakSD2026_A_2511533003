@@ -20,70 +20,76 @@ import javax.swing.border.EmptyBorder;
 
 public class PetaKampus_2511533003 extends JFrame {
 
-    private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
-    private JTextField hasilPencarian;
-    private JTextField nodeDikunjugi;
-    private JTextField textField;
+    private static final long serialVersionUID_3003 = 1L;
+    private JPanel contentPane_3003;
+    private JTextField hasilPencarian_3003;
+    private JTextField nodeDikunjugi_3003;
+    private JTextField textField_3003;
 
     Map<String, MyNode_2511533003> map_3003 = new HashMap<>();
     boolean done_3003 = false;
 
-    JLabel lblLokasiTujuan = new JLabel("lokasi tujuan");
+    JLabel lblLokasiTujuan_3003 = new JLabel("lokasi tujuan");
 
-    JComboBox lokasiAwal = new JComboBox();
+    JComboBox lokasiAwal_3003 = new JComboBox();
 
     // graph
     void initial_3003() {
         map_3003 = new HashMap<>();
-        MyNode_2511533003 gedungPerkuliahan = new MyNode_2511533003(
+        MyNode_2511533003 gedungPerkuliahan_3003 = new MyNode_2511533003(
             "Gedung Perkuliahan"
         );
-        MyNode_2511533003 fakultas = new MyNode_2511533003("Fakultas");
-        MyNode_2511533003 universitas = new MyNode_2511533003("Universitas");
-        MyNode_2511533003 sekolah = new MyNode_2511533003("Sekolah");
-        MyNode_2511533003 rumahSakit = new MyNode_2511533003("Rumah Sakit");
-        MyNode_2511533003 mall = new MyNode_2511533003("Mall");
-        MyNode_2511533003 tempatWisata = new MyNode_2511533003("Tempat Wisata");
-        MyNode_2511533003 bandara = new MyNode_2511533003("Bandara");
+        MyNode_2511533003 fakultas_3003 = new MyNode_2511533003("Fakultas");
+        MyNode_2511533003 universitas_3003 = new MyNode_2511533003(
+            "Universitas"
+        );
+        MyNode_2511533003 sekolah_3003 = new MyNode_2511533003("Sekolah");
+        MyNode_2511533003 rumahSakit_3003 = new MyNode_2511533003(
+            "Rumah Sakit"
+        );
+        MyNode_2511533003 mall_3003 = new MyNode_2511533003("Mall");
+        MyNode_2511533003 tempatWisata_3003 = new MyNode_2511533003(
+            "Tempat Wisata"
+        );
+        MyNode_2511533003 bandara_3003 = new MyNode_2511533003("Bandara");
 
-        gedungPerkuliahan.childs_3003.add(universitas);
-        gedungPerkuliahan.childs_3003.add(tempatWisata);
-        gedungPerkuliahan.childs_3003.add(fakultas);
+        gedungPerkuliahan_3003.childs_3003.add(universitas_3003);
+        gedungPerkuliahan_3003.childs_3003.add(tempatWisata_3003);
+        gedungPerkuliahan_3003.childs_3003.add(fakultas_3003);
 
-        fakultas.childs_3003.add(gedungPerkuliahan);
-        fakultas.childs_3003.add(tempatWisata);
+        fakultas_3003.childs_3003.add(gedungPerkuliahan_3003);
+        fakultas_3003.childs_3003.add(tempatWisata_3003);
 
-        tempatWisata.childs_3003.add(gedungPerkuliahan);
-        tempatWisata.childs_3003.add(fakultas);
-        tempatWisata.childs_3003.add(sekolah);
-        tempatWisata.childs_3003.add(rumahSakit);
+        tempatWisata_3003.childs_3003.add(gedungPerkuliahan_3003);
+        tempatWisata_3003.childs_3003.add(fakultas_3003);
+        tempatWisata_3003.childs_3003.add(sekolah_3003);
+        tempatWisata_3003.childs_3003.add(rumahSakit_3003);
 
-        rumahSakit.childs_3003.add(tempatWisata);
-        rumahSakit.childs_3003.add(mall);
+        rumahSakit_3003.childs_3003.add(tempatWisata_3003);
+        rumahSakit_3003.childs_3003.add(mall_3003);
 
-        sekolah.childs_3003.add(universitas);
-        sekolah.childs_3003.add(tempatWisata);
-        sekolah.childs_3003.add(mall);
+        sekolah_3003.childs_3003.add(universitas_3003);
+        sekolah_3003.childs_3003.add(tempatWisata_3003);
+        sekolah_3003.childs_3003.add(mall_3003);
 
-        mall.childs_3003.add(sekolah);
-        mall.childs_3003.add(rumahSakit);
-        mall.childs_3003.add(bandara);
+        mall_3003.childs_3003.add(sekolah_3003);
+        mall_3003.childs_3003.add(rumahSakit_3003);
+        mall_3003.childs_3003.add(bandara_3003);
 
-        bandara.childs_3003.add(universitas);
-        bandara.childs_3003.add(mall);
+        bandara_3003.childs_3003.add(universitas_3003);
+        bandara_3003.childs_3003.add(mall_3003);
 
-        universitas.childs_3003.add(gedungPerkuliahan);
-        universitas.childs_3003.add(bandara);
+        universitas_3003.childs_3003.add(gedungPerkuliahan_3003);
+        universitas_3003.childs_3003.add(bandara_3003);
 
-        map_3003.put("Gedung Perkuliahan", gedungPerkuliahan);
-        map_3003.put("Fakultas", fakultas);
-        map_3003.put("Universitas", universitas);
-        map_3003.put("Sekolah", sekolah);
-        map_3003.put("Rumah Sakit", rumahSakit);
-        map_3003.put("Mall", mall);
-        map_3003.put("Tempat Wisata", tempatWisata);
-        map_3003.put("Bandara", bandara);
+        map_3003.put("Gedung Perkuliahan", gedungPerkuliahan_3003);
+        map_3003.put("Fakultas", fakultas_3003);
+        map_3003.put("Universitas", universitas_3003);
+        map_3003.put("Sekolah", sekolah_3003);
+        map_3003.put("Rumah Sakit", rumahSakit_3003);
+        map_3003.put("Mall", mall_3003);
+        map_3003.put("Tempat Wisata", tempatWisata_3003);
+        map_3003.put("Bandara", bandara_3003);
     }
 
     String route_3003 = "";
@@ -108,9 +114,9 @@ public class PetaKampus_2511533003 extends JFrame {
                 break;
             }
 
-            int childs_size = temp_3003.childs_3003.size();
+            int childs_size_3003 = temp_3003.childs_3003.size();
 
-            for (int i_3003 = 0; i_3003 < childs_size; i_3003++) {
+            for (int i_3003 = 0; i_3003 < childs_size_3003; i_3003++) {
                 queue_3003.add(temp_3003.childs_3003.get(i_3003));
             }
         }
@@ -135,8 +141,8 @@ public class PetaKampus_2511533003 extends JFrame {
                 break;
             }
 
-            int childs_size = temp_3003.childs_3003.size();
-            for (int i_3003 = 0; i_3003 < childs_size; i_3003++) {
+            int childs_size_3003 = temp_3003.childs_3003.size();
+            for (int i_3003 = 0; i_3003 < childs_size_3003; i_3003++) {
                 stack_3003.push(temp_3003.childs_3003.get(i_3003));
             }
         }
@@ -146,9 +152,9 @@ public class PetaKampus_2511533003 extends JFrame {
         initial_3003();
         tahapan_3003 = 0;
         done_3003 = false;
-        hasilPencarian.setText("");
-        nodeDikunjugi.setText("");
-        textField.setText("");
+        hasilPencarian_3003.setText("");
+        nodeDikunjugi_3003.setText("");
+        textField_3003.setText("");
         route_3003 = "";
     }
 
@@ -160,11 +166,11 @@ public class PetaKampus_2511533003 extends JFrame {
             new Runnable() {
                 public void run() {
                     try {
-                        PetaKampus_2511533003 frame =
+                        PetaKampus_2511533003 frame_3003 =
                             new PetaKampus_2511533003();
-                        frame.setVisible(true);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                        frame_3003.setVisible(true);
+                    } catch (Exception e_3003) {
+                        e_3003.printStackTrace();
                     }
                 }
             }
@@ -177,19 +183,19 @@ public class PetaKampus_2511533003 extends JFrame {
     public PetaKampus_2511533003() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 581, 480);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
-        contentPane.setLayout(null);
+        contentPane_3003 = new JPanel();
+        contentPane_3003.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane_3003);
+        contentPane_3003.setLayout(null);
 
-        JLabel lblIoj = new JLabel("lokasi awal");
-        lblIoj.setBounds(12, 0, 80, 17);
-        contentPane.add(lblIoj);
+        JLabel lblIoj_3003 = new JLabel("lokasi awal");
+        lblIoj_3003.setBounds(12, 0, 80, 17);
+        contentPane_3003.add(lblIoj_3003);
 
-        lblLokasiTujuan.setBounds(12, 29, 93, 17);
-        contentPane.add(lblLokasiTujuan);
+        lblLokasiTujuan_3003.setBounds(12, 29, 93, 17);
+        contentPane_3003.add(lblLokasiTujuan_3003);
 
-        lokasiAwal.setModel(
+        lokasiAwal_3003.setModel(
             new DefaultComboBoxModel(new String[] {
                 "<pilih>",
                 "Gedung Perkuliahan",
@@ -202,11 +208,11 @@ public class PetaKampus_2511533003 extends JFrame {
                 "Bandara",
             })
         );
-        lokasiAwal.setBounds(102, -5, 147, 26);
-        contentPane.add(lokasiAwal);
+        lokasiAwal_3003.setBounds(102, -5, 147, 26);
+        contentPane_3003.add(lokasiAwal_3003);
 
-        JComboBox lokasiTujuan = new JComboBox();
-        lokasiTujuan.setModel(
+        JComboBox lokasiTujuan_3003 = new JComboBox();
+        lokasiTujuan_3003.setModel(
             new DefaultComboBoxModel(new String[] {
                 "<pilih>",
                 "Gedung Perkuliahan",
@@ -219,13 +225,13 @@ public class PetaKampus_2511533003 extends JFrame {
                 "Bandara",
             })
         );
-        lokasiTujuan.setBounds(102, 24, 147, 26);
-        contentPane.add(lokasiTujuan);
+        lokasiTujuan_3003.setBounds(102, 24, 147, 26);
+        contentPane_3003.add(lokasiTujuan_3003);
 
-        JButton dfsButton = new JButton("DFS");
-        dfsButton.addActionListener(e -> {
-            int optionLokasiAwal_3003 = lokasiAwal.getSelectedIndex();
-            int optionLokasiTujuan_3003 = lokasiTujuan.getSelectedIndex();
+        JButton dfsButton_3003 = new JButton("DFS");
+        dfsButton_3003.addActionListener(e -> {
+            int optionLokasiAwal_3003 = lokasiAwal_3003.getSelectedIndex();
+            int optionLokasiTujuan_3003 = lokasiTujuan_3003.getSelectedIndex();
             if (
                 optionLokasiAwal_3003 == 0 ||
                 optionLokasiTujuan_3003 == 0 ||
@@ -274,22 +280,22 @@ public class PetaKampus_2511533003 extends JFrame {
 
             initial_3003();
             dfs_3003(map_3003.get(awal_3003), tujuan_3003);
-            hasilPencarian.setText(tujuan_3003);
-            nodeDikunjugi.setText(route_3003);
-            textField.setText("" + tahapan_3003);
+            hasilPencarian_3003.setText(tujuan_3003);
+            nodeDikunjugi_3003.setText(route_3003);
+            textField_3003.setText("" + tahapan_3003);
 
             done_3003 = true;
         });
-        dfsButton.setBounds(294, 24, 80, 27);
-        contentPane.add(dfsButton);
+        dfsButton_3003.setBounds(294, 24, 80, 27);
+        contentPane_3003.add(dfsButton_3003);
 
-        JButton bfsButton = new JButton("BFS");
-        bfsButton.setBounds(385, 24, 80, 27);
-        contentPane.add(bfsButton);
+        JButton bfsButton_3003 = new JButton("BFS");
+        bfsButton_3003.setBounds(385, 24, 80, 27);
+        contentPane_3003.add(bfsButton_3003);
 
-        bfsButton.addActionListener(e -> {
-            int optionLokasiAwal_3003 = lokasiAwal.getSelectedIndex();
-            int optionLokasiTujuan_3003 = lokasiTujuan.getSelectedIndex();
+        bfsButton_3003.addActionListener(e -> {
+            int optionLokasiAwal_3003 = lokasiAwal_3003.getSelectedIndex();
+            int optionLokasiTujuan_3003 = lokasiTujuan_3003.getSelectedIndex();
             if (
                 optionLokasiAwal_3003 == 0 ||
                 optionLokasiTujuan_3003 == 0 ||
@@ -338,53 +344,53 @@ public class PetaKampus_2511533003 extends JFrame {
 
             initial_3003();
             bfs_3003(map_3003.get(awal_3003), tujuan_3003);
-            hasilPencarian.setText(tujuan_3003);
-            nodeDikunjugi.setText(route_3003);
-            textField.setText("" + tahapan_3003);
+            hasilPencarian_3003.setText(tujuan_3003);
+            nodeDikunjugi_3003.setText(route_3003);
+            textField_3003.setText("" + tahapan_3003);
 
             done_3003 = true;
         });
 
-        JButton resetButton = new JButton("RESET");
-        resetButton.setBounds(477, 24, 80, 27);
-        contentPane.add(resetButton);
-        resetButton.addActionListener(e -> {
+        JButton resetButton_3003 = new JButton("RESET");
+        resetButton_3003.setBounds(477, 24, 80, 27);
+        contentPane_3003.add(resetButton_3003);
+        resetButton_3003.addActionListener(e -> {
             reset_3003();
         });
 
-        JTextArea txtrDwadwwd = new JTextArea();
-        txtrDwadwwd.setEditable(false);
-        txtrDwadwwd.setText(
+        JTextArea txtrDwadwwd_3003 = new JTextArea();
+        txtrDwadwwd_3003.setEditable(false);
+        txtrDwadwwd_3003.setText(
             "Gedung Perkuliahan ---------------- Fakultas\n               |\\\t                                       |\n               |   \\                                               |                                     \n               |     \\____________________Tempat Wisata ----------Rumah Sakit\n               |                                                    |                                     |\n     Universitas  ------------------------- Sekolah --------------------- Mall\n               |                                                                                            |\n               |                                                                                            |\n               +---------------------------------Bandara------------------------+\n"
         );
-        txtrDwadwwd.setBounds(102, 105, 385, 176);
-        contentPane.add(txtrDwadwwd);
+        txtrDwadwwd_3003.setBounds(102, 105, 385, 176);
+        contentPane_3003.add(txtrDwadwwd_3003);
 
-        JLabel lblH = new JLabel("Hasil Pencarian");
-        lblH.setBounds(12, 293, 135, 17);
-        contentPane.add(lblH);
+        JLabel lblH_3003 = new JLabel("Hasil Pencarian");
+        lblH_3003.setBounds(12, 293, 135, 17);
+        contentPane_3003.add(lblH_3003);
 
-        JLabel lblNodeDikunjungi = new JLabel("Node Dikunjungi");
-        lblNodeDikunjungi.setBounds(12, 341, 135, 17);
-        contentPane.add(lblNodeDikunjungi);
+        JLabel lblNodeDikunjungi_3003 = new JLabel("Node Dikunjungi");
+        lblNodeDikunjungi_3003.setBounds(12, 341, 135, 17);
+        contentPane_3003.add(lblNodeDikunjungi_3003);
 
-        hasilPencarian = new JTextField();
-        hasilPencarian.setBounds(12, 308, 237, 21);
-        contentPane.add(hasilPencarian);
-        hasilPencarian.setColumns(10);
+        hasilPencarian_3003 = new JTextField();
+        hasilPencarian_3003.setBounds(12, 308, 237, 21);
+        contentPane_3003.add(hasilPencarian_3003);
+        hasilPencarian_3003.setColumns(10);
 
-        nodeDikunjugi = new JTextField();
-        nodeDikunjugi.setColumns(10);
-        nodeDikunjugi.setBounds(12, 361, 545, 21);
-        contentPane.add(nodeDikunjugi);
+        nodeDikunjugi_3003 = new JTextField();
+        nodeDikunjugi_3003.setColumns(10);
+        nodeDikunjugi_3003.setBounds(12, 361, 545, 21);
+        contentPane_3003.add(nodeDikunjugi_3003);
 
-        JLabel lblNodeDikunjungi_1 = new JLabel("Node Dikunjungi");
-        lblNodeDikunjungi_1.setBounds(12, 383, 135, 17);
-        contentPane.add(lblNodeDikunjungi_1);
+        JLabel lblNodeDikunjungi_1_3003 = new JLabel("Node Dikunjungi");
+        lblNodeDikunjungi_1_3003.setBounds(12, 383, 135, 17);
+        contentPane_3003.add(lblNodeDikunjungi_1_3003);
 
-        textField = new JTextField();
-        textField.setColumns(10);
-        textField.setBounds(12, 412, 237, 21);
-        contentPane.add(textField);
+        textField_3003 = new JTextField();
+        textField_3003.setColumns(10);
+        textField_3003.setBounds(12, 412, 237, 21);
+        contentPane_3003.add(textField_3003);
     }
 }
