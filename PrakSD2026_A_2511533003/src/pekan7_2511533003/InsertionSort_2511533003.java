@@ -17,7 +17,7 @@ public class InsertionSort_2511533003 {
     }
 
     public static void main(String[] args) {
-        int arr_3003[] = {23, 78, 45, 8, 32, 52, 1};
+        int arr_3003[] = { 23, 78, 45, 8, 32, 52, 1 };
 
         int n_3003 = arr_3003.length;
 

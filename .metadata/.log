@@ -1497,3 +1497,516 @@ Chain 2:
 
 !ENTRY ch.qos.logback.classic 1 0 2026-06-02 14:22:14.294
 !MESSAGE Logback config file: /home/arax/Documents/kuliah/semester_2/strukdat/pratikum/code/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.100.20250418-1315.xml
+!SESSION 2026-06-12 15:01:36.604 -----------------------------------------------
+eclipse.buildId=4.36.0.20250605-1300
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.eclemma.core 4 0 2026-06-12 15:01:40.360
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [150]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.13,0.8.14)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.13.202504020838"
+       org.jacoco.report [484]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.objectweb.asm"
+              org.jacoco.core [483]
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.13,0.8.14)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.13,0.8.14)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.13.202504020838"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.8.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:495)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2110)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:146)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2101)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2041)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:2003)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1915)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2026-06-12 15:01:40.376
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [152]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.13,0.8.14)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.13.202504020838"
+       org.jacoco.core [483]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.10.202505212130"; singleton:="true"
+       org.eclipse.eclemma.core [150]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.13,0.8.14)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.13.202504020838"
+              org.jacoco.report [484]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.13,0.8.14)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.13.202504020838"; version="0.8.13"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.13,0.8.14)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.13.202504020838"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.13.202504020838"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.8.0)(!(version>=9.9.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.8.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.9.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:495)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2110)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:146)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2101)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2041)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:2003)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1915)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY ch.qos.logback.classic 1 0 2026-06-12 15:01:40.617
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-06-12 15:01:45.698
+!MESSAGE Logback config file: /home/arax/Documents/kuliah/semester_2/strukdat/pratikum/code/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.100.20250418-1315.xml
+
+!ENTRY org.eclipse.wb.core 4 4 2026-06-12 15:05:08.723
+!MESSAGE Designer [1.21.0.202508081944.202606121505]: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+	at org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getComponent(BorderLayoutInfo.java:100)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedback(BorderLayoutEditPolicy.java:88)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedbacks(BorderLayoutEditPolicy.java:62)
+	at org.eclipse.wb.core.gef.policy.layout.position.AbstractPositionLayoutEditPolicy.showLayoutTargetFeedback(AbstractPositionLayoutEditPolicy.java:61)
+	at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:216)
+	at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:406)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:243)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:102)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:79)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:179)
+	at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleMove(AbstractCreationTool.java:77)
+	at org.eclipse.wb.gef.core.tools.Tool.mouseMove(Tool.java:301)
+	at org.eclipse.gef.EditDomain.mouseMove(EditDomain.java:275)
+	at org.eclipse.wb.internal.gef.core.EditDomain.mouseMove(EditDomain.java:242)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.lambda$3(EditEventManager.java:178)
+	at org.eclipse.wb.internal.draw2d.EventManager.delayEvent(EventManager.java:338)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.dispatchMouseMoved(EditEventManager.java:165)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseMove(LightweightSystem.java:592)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:250)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-06-12 15:05:14.406
+!MESSAGE Designer [1.21.0.202508081944.202606121505]: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+	at org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getComponent(BorderLayoutInfo.java:100)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedback(BorderLayoutEditPolicy.java:88)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedbacks(BorderLayoutEditPolicy.java:62)
+	at org.eclipse.wb.core.gef.policy.layout.position.AbstractPositionLayoutEditPolicy.showLayoutTargetFeedback(AbstractPositionLayoutEditPolicy.java:61)
+	at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:216)
+	at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:406)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:243)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:102)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:79)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:179)
+	at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleMove(AbstractCreationTool.java:77)
+	at org.eclipse.wb.gef.core.tools.Tool.mouseMove(Tool.java:301)
+	at org.eclipse.gef.EditDomain.mouseMove(EditDomain.java:275)
+	at org.eclipse.wb.internal.gef.core.EditDomain.mouseMove(EditDomain.java:242)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.lambda$3(EditEventManager.java:178)
+	at org.eclipse.wb.internal.draw2d.EventManager.delayEvent(EventManager.java:338)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.dispatchMouseMoved(EditEventManager.java:165)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseMove(LightweightSystem.java:592)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:250)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-06-12 15:05:17.915
+!MESSAGE Designer [1.21.0.202508081944.202606121505]: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+	at org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getComponent(BorderLayoutInfo.java:100)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedback(BorderLayoutEditPolicy.java:88)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedbacks(BorderLayoutEditPolicy.java:62)
+	at org.eclipse.wb.core.gef.policy.layout.position.AbstractPositionLayoutEditPolicy.showLayoutTargetFeedback(AbstractPositionLayoutEditPolicy.java:61)
+	at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:216)
+	at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:406)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:243)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:102)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:79)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:179)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.unlockTargetEditPart(TargetingTool.java:141)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.lockTargetEditPart(TargetingTool.java:128)
+	at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleButtonDown(AbstractCreationTool.java:51)
+	at org.eclipse.wb.gef.core.tools.Tool.mouseDown(Tool.java:260)
+	at org.eclipse.gef.EditDomain.mouseDown(EditDomain.java:236)
+	at org.eclipse.wb.internal.gef.core.EditDomain.mouseDown(EditDomain.java:224)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.lambda$1(EditEventManager.java:137)
+	at org.eclipse.wb.internal.draw2d.EventManager.delayEvent(EventManager.java:338)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.dispatchMousePressed(EditEventManager.java:125)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseDown(LightweightSystem.java:568)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:230)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-06-12 15:05:40.085
+!MESSAGE Designer [1.21.0.202508081944.202606121505]: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+	at org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getComponent(BorderLayoutInfo.java:100)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedback(BorderLayoutEditPolicy.java:88)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedbacks(BorderLayoutEditPolicy.java:62)
+	at org.eclipse.wb.core.gef.policy.layout.position.AbstractPositionLayoutEditPolicy.showLayoutTargetFeedback(AbstractPositionLayoutEditPolicy.java:61)
+	at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:216)
+	at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:406)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:243)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:102)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:79)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:179)
+	at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleMove(AbstractCreationTool.java:77)
+	at org.eclipse.wb.gef.core.tools.Tool.mouseMove(Tool.java:301)
+	at org.eclipse.gef.EditDomain.mouseMove(EditDomain.java:275)
+	at org.eclipse.wb.internal.gef.core.EditDomain.mouseMove(EditDomain.java:242)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.lambda$3(EditEventManager.java:178)
+	at org.eclipse.wb.internal.draw2d.EventManager.delayEvent(EventManager.java:338)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.dispatchMouseMoved(EditEventManager.java:165)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseMove(LightweightSystem.java:592)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:250)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-06-12 15:05:43.096
+!MESSAGE Designer [1.21.0.202508081944.202606121505]: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+	at org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getComponent(BorderLayoutInfo.java:100)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedback(BorderLayoutEditPolicy.java:88)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedbacks(BorderLayoutEditPolicy.java:62)
+	at org.eclipse.wb.core.gef.policy.layout.position.AbstractPositionLayoutEditPolicy.showLayoutTargetFeedback(AbstractPositionLayoutEditPolicy.java:61)
+	at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:216)
+	at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:406)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:243)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:102)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:79)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:179)
+	at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleMove(AbstractCreationTool.java:77)
+	at org.eclipse.wb.gef.core.tools.Tool.mouseMove(Tool.java:301)
+	at org.eclipse.gef.EditDomain.mouseMove(EditDomain.java:275)
+	at org.eclipse.wb.internal.gef.core.EditDomain.mouseMove(EditDomain.java:242)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.lambda$3(EditEventManager.java:178)
+	at org.eclipse.wb.internal.draw2d.EventManager.delayEvent(EventManager.java:338)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.dispatchMouseMoved(EditEventManager.java:165)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseMove(LightweightSystem.java:592)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:250)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-06-12 15:05:43.595
+!MESSAGE Designer [1.21.0.202508081944.202606121505]: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+	at org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getComponent(BorderLayoutInfo.java:100)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedback(BorderLayoutEditPolicy.java:88)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedbacks(BorderLayoutEditPolicy.java:62)
+	at org.eclipse.wb.core.gef.policy.layout.position.AbstractPositionLayoutEditPolicy.showLayoutTargetFeedback(AbstractPositionLayoutEditPolicy.java:61)
+	at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:216)
+	at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:406)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:243)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:102)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:79)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:179)
+	at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleMove(AbstractCreationTool.java:77)
+	at org.eclipse.wb.gef.core.tools.Tool.mouseMove(Tool.java:301)
+	at org.eclipse.gef.EditDomain.mouseMove(EditDomain.java:275)
+	at org.eclipse.wb.internal.gef.core.EditDomain.mouseMove(EditDomain.java:242)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.lambda$3(EditEventManager.java:178)
+	at org.eclipse.wb.internal.draw2d.EventManager.delayEvent(EventManager.java:338)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.dispatchMouseMoved(EditEventManager.java:165)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseMove(LightweightSystem.java:592)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:250)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.wb.core 4 4 2026-06-12 15:05:50.010
+!MESSAGE Designer [1.21.0.202508081944.202606121505]: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.awt.BorderLayout.getLayoutComponent(Object)" because the return value of "org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getLayoutManager()" is null
+	at org.eclipse.wb.internal.swing.model.layout.BorderLayoutInfo.getComponent(BorderLayoutInfo.java:100)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedback(BorderLayoutEditPolicy.java:88)
+	at org.eclipse.wb.internal.swing.gef.policy.layout.BorderLayoutEditPolicy.addFeedbacks(BorderLayoutEditPolicy.java:62)
+	at org.eclipse.wb.core.gef.policy.layout.position.AbstractPositionLayoutEditPolicy.showLayoutTargetFeedback(AbstractPositionLayoutEditPolicy.java:61)
+	at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:216)
+	at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:406)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:243)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:102)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:79)
+	at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:179)
+	at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleMove(AbstractCreationTool.java:77)
+	at org.eclipse.wb.gef.core.tools.Tool.mouseMove(Tool.java:301)
+	at org.eclipse.gef.EditDomain.mouseMove(EditDomain.java:275)
+	at org.eclipse.wb.internal.gef.core.EditDomain.mouseMove(EditDomain.java:242)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.lambda$3(EditEventManager.java:178)
+	at org.eclipse.wb.internal.draw2d.EventManager.delayEvent(EventManager.java:338)
+	at org.eclipse.wb.internal.gef.graphical.EditEventManager.dispatchMouseMoved(EditEventManager.java:165)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseMove(LightweightSystem.java:592)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:250)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1656)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:5077)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4522)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
+
+!ENTRY org.eclipse.ui 4 4 2026-06-12 18:04:15.450
+!MESSAGE Conflicting handlers for org.eclipse.ui.edit.selectAll: {org.eclipse.wb.internal.core.utils.binding.editors.controls.DefaultControlActionsManager$1@ef534a6} vs {org.eclipse.wb.internal.core.utils.binding.editors.controls.DefaultControlActionsManager$1@ef534a6} in: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.eclipse.wb.core.guiEditorContext
+!STACK 0
+java.lang.IllegalStateException: Conflicting handlers: {[org.eclipse.wb.internal.core.utils.binding.editors.controls.DefaultControlActionsManager$1@ef534a6,  for 'org.eclipse.ui.edit.selectAll',  in WorkbenchContext, activeWhen=org.eclipse.wb.internal.core.utils.binding.editors.controls.AbstractControlActionsManager$3@29e32a2e, active=true, sourcePriority=-1073741824, participating=true]} vs {[org.eclipse.wb.internal.core.utils.binding.editors.controls.DefaultControlActionsManager$1@ef534a6,  for 'org.eclipse.ui.edit.selectAll',  in WorkbenchContext, activeWhen=org.eclipse.wb.internal.core.utils.binding.editors.controls.AbstractControlActionsManager$3@2e7c9ead, active=true, sourcePriority=-1073741824, participating=true]} in: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.eclipse.wb.core.guiEditorContext
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:143)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:70)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:243)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:230)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:99)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:306)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:581)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:662)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:451)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:104)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1963)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1655)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1682)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1665)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1704)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:1000)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:4013)
+	at org.eclipse.swt.widgets.Text.gtk_key_press_event(Text.java:1876)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2639)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:6857)
+	at org.eclipse.swt.widgets.Text.windowProc(Text.java:2982)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:6169)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1605)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_iteration_do(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4519)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1403)
